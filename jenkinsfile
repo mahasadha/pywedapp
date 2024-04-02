@@ -14,7 +14,7 @@ environment {
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build('mahasadha/newpyapp')
+                    bat 'C:\\Program Files\\Docker\\Docker\\docker build -t mahasadha/newpyapp .'
                 }
             }
         }
@@ -22,7 +22,7 @@ environment {
             steps {
                 script {
                     // Run Docker container
-                    docker.run('-d --name myapp -p 5000:5000 mahasadha/newpyapp')
+                    bat 'C:\\Program Files\\Docker\\Docker\\docker run -d --name myapp -p 5000:5000 mahasadha/newpyapp'
                 }
             }
         }
